@@ -24,9 +24,9 @@ export const buildBrowserStatic = () => gulp
 
 export const buildBrowserScripts = () =>
 	rollup({
-		input: 'src/browser/js/af3.jsx',
+		input: 'src/browser/js/center.jsx',
 		format: 'iife',
-		name: 'af3',
+		name: 'CENTER',
 		sourcemap: true,
 		treeshake: true,
 		plugins: [
@@ -40,14 +40,14 @@ export const buildBrowserScripts = () =>
 					[
 						'@babel/env',
 						{
-							targets: 'last 2 version'
+							targets: 'last 4 version'
 						}
 					]
 				]
 			})
 		]
 	})
-	.pipe(source('browser/js/af3.js'))
+	.pipe(source('browser/js/center.js'))
 	.pipe(buffer())
 	.pipe(sourcemaps.init({loadMaps: true}))
 	.pipe(sourcemaps.write(''))
