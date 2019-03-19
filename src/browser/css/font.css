@@ -17,7 +17,7 @@
 @font-face {
   font-family: 'Assistant';
   font-style: normal;
-  font-weight: 700;
+  font-weight: bold;
   src: url('../font/assistant-v3-latin-700.eot'); /* IE9 Compat Modes */
   src: local('Assistant Bold'), local('Assistant-Bold'),
        url('../font/assistant-v3-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
