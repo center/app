@@ -130,6 +130,8 @@ export default () => {
 
 			{galaxies.slice(4)}
 
+			<CloudVideo blendMode="luminosity" opacity="0.05" />
+
 			<!-- A vignette around the screen - looks super nice. -->
 			<div style={{
 				position: 'absolute',
