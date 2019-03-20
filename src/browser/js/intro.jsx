@@ -89,7 +89,7 @@ export default () => {
 	];
 
 	const elem = (
-		<div style={{
+		<div class="non-interactive" style={{
 			position: 'fixed',
 			left: '0',
 			top: '0',

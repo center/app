@@ -6,3 +6,8 @@ html, body {
 	height: 100vh;
 	overflow: hidden;
 }
+
+.non-interactive, .non-interactive * {
+	pointer-events: none;
+	user-select: none;
+}
