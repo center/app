@@ -6,7 +6,7 @@ import Intro from './intro';
 const centerRoot = () => {
 	const intro = <Intro />;
 
-	//setTimeout(() => intro.show(false), 5000);
+	setTimeout(() => intro.show(false), 5000);
 
 	return (
 		<div>

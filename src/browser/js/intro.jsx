@@ -1,6 +1,9 @@
 import * as Surplus from 'surplus';
 import S from 's-js';
 
+import {grid} from './util/grid';
+import Spinner from './spinner';
+
 const Galaxy = ({src, duration, blendMode, opacity}) => {
 	const elem = (<img src={src} style={{
 		position: 'absolute',
@@ -91,6 +94,12 @@ export default () => {
 		<Galaxy src="img/intro/galaxy4.jpg" duration={30000} blendMode="soft-light" />
 	];
 
+	const spinner = (
+		<Spinner size="75" style={{
+			...grid.child(2, 2)
+		}} />
+	);
+
 	const elem = (
 		<div class="non-interactive" style={{
 			position: 'fixed',
@@ -115,6 +124,15 @@ export default () => {
 				height: '100vh',
 				background: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 13%,rgba(0,0,0,0.86) 95%,rgba(0,0,0,0.92) 94%,rgba(0,0,0,1) 100%)'
 			}}></div>
+
+			<div style={{
+				...grid('1fr 75px 1fr'),
+				width: '100%',
+				height: '100%',
+				position: 'absolute'
+			}}>
+				{spinner}
+			</div>
 		</div>
 	);
 
