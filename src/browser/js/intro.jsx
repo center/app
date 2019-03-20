@@ -95,8 +95,8 @@ const CloudVideo = ({transform, blendMode, opacity}) => {
 
 export default () => {
 	const galaxies = [
-		<Galaxy src="img/intro/galaxy1.jpg" duration={100000} />,
-		<Galaxy src="img/intro/galaxy2.jpg" duration={100000} blendMode="hard-light" />,
+		<Galaxy src="img/intro/galaxy1.jpg" duration={80000} />,
+		<Galaxy src="img/intro/galaxy2.jpg" duration={70000} blendMode="hard-light" />,
 		<Galaxy src="img/intro/galaxy3.jpg" duration={60000} blendMode="color-dodge" />,
 		<Galaxy src="img/intro/clouds1.jpg" duration={23000} blendMode="multiply" opacity="0.6" />,
 		<Galaxy src="img/intro/galaxy4.jpg" duration={30000} blendMode="soft-light" />
@@ -119,11 +119,16 @@ export default () => {
 			willChange: 'opacity, contents',
 			opacity: '0'
 		}}>
-			{galaxies}
+			{galaxies.slice(0, 3)}
 
 			<!-- Sick cloud videos. -->
-			<CloudVideo blendMode="color-dodge" />
 			<CloudVideo blendMode="multiply" transform="scaleX(-1) scaleY(-1)" opacity="0.5" />
+
+			{galaxies.slice(3, 4)}
+
+			<CloudVideo blendMode="hue" opacity="0.9" />
+
+			{galaxies.slice(4)}
 
 			<!-- A vignette around the screen - looks super nice. -->
 			<div style={{
