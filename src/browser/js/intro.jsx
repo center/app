@@ -84,7 +84,7 @@ const CloudVideo = ({transform, blendMode, opacity}) => (
 
 export default () => {
 	const galaxies = [
-		<Galaxy src="img/intro/galaxy1.jpg" duration={150000} />,
+		<Galaxy src="img/intro/galaxy1.jpg" duration={100000} />,
 		<Galaxy src="img/intro/galaxy2.jpg" duration={100000} blendMode="hard-light" />,
 		<Galaxy src="img/intro/galaxy3.jpg" duration={60000} blendMode="color-dodge" />,
 		<Galaxy src="img/intro/clouds1.jpg" duration={23000} blendMode="multiply" opacity="0.6" />,
