@@ -66,6 +66,19 @@ const Galaxy = ({src, duration, blendMode, opacity}) => {
 	return elem;
 };
 
+const CloudVideo = ({transform, blendMode, opacity}) => (
+	<video autoplay loop style={{
+		position: 'absolute',
+		minWidth: '100vw',
+		minHeight: '100vh',
+		opacity,
+		mixBlendMode: blendMode,
+		transform
+	}}>
+		<source src="img/intro/clouds.webm" type="video/webm" />
+	</video>
+);
+
 export default () => {
 	const galaxies = [
 		<Galaxy src="img/intro/galaxy1.jpg" duration={150000} />,
@@ -86,6 +99,10 @@ export default () => {
 			opacity: '0'
 		}}>
 			{galaxies}
+
+			<!-- Sick cloud videos. -->
+			<CloudVideo blendMode="color-dodge" />
+			<CloudVideo blendMode="multiply" transform="scaleX(-1) scaleY(-1)" opacity="0.5" />
 
 			<!-- A vignette around the screen - looks super nice. -->
 			<div style={{
