@@ -70,20 +70,28 @@ const Galaxy = ({src, duration, blendMode, opacity}) => {
 	return elem;
 };
 
-const CloudVideo = ({transform, blendMode, opacity}) => (
-	<video autoplay loop style={{
-		position: 'absolute',
-		minWidth: '100vw',
-		height: '100vh',
-		objectFit: 'cover',
-		willChange: 'transform, opacity, contents',
-		opacity,
-		mixBlendMode: blendMode,
-		transform
-	}}>
-		<source src="img/intro/clouds.webm" type="video/webm" />
-	</video>
-);
+const CloudVideo = ({transform, blendMode, opacity}) => {
+	const elem = (
+		<video autoplay loop style={{
+			position: 'absolute',
+			minWidth: '100vw',
+			height: '100vh',
+			objectFit: 'cover',
+			willChange: 'transform, opacity, contents',
+			opacity,
+			mixBlendMode: blendMode,
+			transform
+		}}>
+			<source src="img/intro/clouds.webm" type="video/webm" />
+		</video>
+	);
+
+	elem.addEventListener('durationchange', () => {
+		elem.currentTime = Math.random() * elem.duration;
+	});
+
+	return elem;
+};
 
 export default () => {
 	const galaxies = [
