@@ -9,6 +9,7 @@ const Galaxy = ({src, duration, blendMode, opacity}) => {
 		minHeight: '100vh',
 		maxHeight: '110vh',
 		objectFit: 'cover',
+		willChange: 'transform, opacity',
 		mixBlendMode: blendMode,
 		opacity
 	}} />);
@@ -70,7 +71,9 @@ const CloudVideo = ({transform, blendMode, opacity}) => (
 	<video autoplay loop style={{
 		position: 'absolute',
 		minWidth: '100vw',
-		minHeight: '100vh',
+		height: '100vh',
+		objectFit: 'cover',
+		willChange: 'transform, opacity, contents',
 		opacity,
 		mixBlendMode: blendMode,
 		transform
@@ -96,6 +99,7 @@ export default () => {
 			width: '100%',
 			height: '100%',
 			transition: 'opacity 1s',
+			willChange: 'opacity, contents',
 			opacity: '0'
 		}}>
 			{galaxies}
